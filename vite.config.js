@@ -8,8 +8,6 @@ export default defineConfig({
       "/api": {
         target: "https://v-blog-api.vercel.app",
         secure: false,
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\//, ""),
       },
     },
   },
