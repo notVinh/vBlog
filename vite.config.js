@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "https://v-blog-api.vercel.app/",
+        target: "https://v-blog-api.vercel.app",
         secure: false,
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\//, ""),
