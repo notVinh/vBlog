@@ -18,13 +18,18 @@ const LikedSection = ({ postId, isLike, postItem }) => {
         navigate("/sign-in");
         return;
       }
-      const res = await fetch(`/api/post/likepost/${postId}`, {
-        method: "PUT",
-      });
+      const res = await fetch(
+        `${import.meta.env.VITE_API}/api/post/likepost/${postId}`,
+        {
+          method: "PUT",
+        }
+      );
       if (res.ok) {
         const fetchPost = async () => {
           try {
-            const res = await fetch(`/api/post/getposts/${postId}`);
+            const res = await fetch(
+              `${import.meta.env.VITE_API}/api/post/getposts/${postId}`
+            );
             const item = await res.json();
             if (res.ok) {
               setPost(item);
